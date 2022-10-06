@@ -99,8 +99,16 @@ export default function ToDo({ navigation }) {
   let showSendVerificationEmail = () => {
     return (
       <View style={AppStyles.backgroundCover}>
-        <Text>Please verify your email to use ToDo</Text>
-        <Button title="Send Verification Email" onPress={() => sendEmailVerification(auth.currentUser)} />
+        <Text style={{ textAlign: 'center', color: '#0a5', marginBottom: 10, fontSize: 20 }}>Verification Email Sent !</Text>
+        <Text style={{ textAlign: 'center' }}>Please open your email, verify yourself and Login</Text>
+        <Text style={{ textAlign: 'center', marginVertical: 10, fontSize: 18 }}>OR </Text>
+        <Button title="Send Verification Email Again" onPress={() => {
+          sendEmailVerification(auth.currentUser)
+            .then(() => {
+              navigation.popToTop();
+            })
+        }
+        } />
       </View>
     );
   };

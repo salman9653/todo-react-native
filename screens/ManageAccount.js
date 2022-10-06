@@ -67,45 +67,37 @@ export default function ManageAccount({ navigation }) {
 
   return (
     <ImageBackground source={background} style={AppStyles.container}>
-      <Brand />
-      <View style={AppStyles.backgroundCover}>
+      <View style={AppStyles.rowContainerSpace}>
+        <Brand />
+        <Button title="  Back  " onPress={() => navigation.pop()} />
+      </View>
+      <View style={AppStyles.backgroundCoverToDo}>
         <Text style={AppStyles.header}>Manage Your Account</Text>
-        <Text style={AppStyles.errorText}>{errorMessage}</Text>
+        <Text style={{ marginBottom: 50, fontSize: 18 }} >{auth.currentUser.email}</Text>
         <TextInput
-          style={[AppStyles.textInput, AppStyles.darkTextInput]}
+          style={AppStyles.textInput}
           placeholder='Current Password'
           value={currentPassword}
           secureTextEntry={true}
           onChangeText={setCurrentPassword} />
         <TextInput
-          style={[AppStyles.textInput, AppStyles.darkTextInput]}
+          style={AppStyles.textInput}
           placeholder='New Password'
           value={newPassword}
           secureTextEntry={true}
           onChangeText={setNewPassword} />
-
-        <View style={{ width: '100%' }}>
+        <Text style={AppStyles.errorText}>{errorMessage}</Text>
+        <View style={{ marginTop: 30 }}>
           <View style={AppStyles.manageAccountButtons}>
             <Button title="Update Password" onPress={updateUserPassword} />
           </View>
           <View style={AppStyles.manageAccountButtons}>
-            <Button title="Delete User" onPress={deleteUserAndToDos} />
+            <Button color='#f55' title="Logout" onPress={logout} />
           </View>
           <View style={AppStyles.manageAccountButtons}>
-            <Button title="Logout" onPress={logout} />
-          </View>
-          <View style={AppStyles.manageAccountButtons}>
-            <Button title="Back to ToDos" onPress={() => navigation.pop()} />
+            <Button color='#f55' title="Delete Your Account" onPress={deleteUserAndToDos} />
           </View>
         </View>
-
-
-
-
-
-
-
-
       </View>
     </ImageBackground>
 
