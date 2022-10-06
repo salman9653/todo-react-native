@@ -141,4 +141,7 @@ export default StyleSheet.create({
         color: '#f55',
         marginBottom: 10
     },
+    manageAccountButtons: {
+        marginVertical: 5,
+    }
 });

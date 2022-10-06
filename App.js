@@ -5,7 +5,7 @@ import Login from './screens/Login';
 import Signup from './screens/Signup';
 import ResetPassword from './screens/ResetPassword';
 import ToDo from './screens/ToDo';
-// import ManageAccount from './screens/ManageAccount';
+import ManageAccount from './screens/ManageAccount';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,10 +26,10 @@ export default function App() {
           name="ResetPassword"
           component={ResetPassword}
           options={{ headerShown: false }} />
-        {/* <Stack.Screen
+        <Stack.Screen
           name="ManageAccount"
           component={ManageAccount}
-          options={{ headerShown: false }} /> */}
+          options={{ headerShown: false }} />
         <Stack.Screen
           name="ToDo"
           component={ToDo}
