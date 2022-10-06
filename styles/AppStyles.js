@@ -30,7 +30,8 @@ export default StyleSheet.create({
     // },
     // leftMargin: {
     //     marginLeft: 16
-    // }, lightText: {
+    // },
+    //  lightText: {
     //     color: "#fff"
     // },
     // errorText: {
@@ -53,7 +54,7 @@ export default StyleSheet.create({
         textAlign: 'center',
         color: '#555',
         fontWeight: 'bold',
-        marginVertical: 20,
+        marginVertical: 10,
     },
     rowContainer: {
         flexDirection: 'row',
@@ -61,11 +62,26 @@ export default StyleSheet.create({
         justifyContent: 'center',
         marginTop: 15,
     },
-    brandAccountContainer: {
+    rowContainerSpace: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 15,
+        justifyContent: 'space-between',
+        marginHorizontal: 50,
+        marginVertical: 20,
+    },
+    rowContainerListItem: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginHorizontal: 10,
+        marginVertical: 10,
+    },
+    rowContainerModal: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginHorizontal: 50,
+        marginVertical: 30,
     },
     backgroundCover: {
         alignSelf: 'center',
@@ -75,6 +91,33 @@ export default StyleSheet.create({
         padding: 20,
         backgroundColor: 'rgba(255, 255, 255, 0.8)',
         borderRadius: 10,
+    },
+    backgroundCoverToDo: {
+        alignSelf: 'center',
+        // alignItems: 'center',
+        // justifyContent: 'center',
+        width: '90%',
+        height: '80%',
+        padding: 20,
+        backgroundColor: 'rgba(255, 255, 255, 0.7)',
+        borderRadius: 10,
+    },
+    addToDoModal: {
+        backgroundColor: 'rgba(255, 255, 255,0.9)',
+        height: '30%',
+        width: '98%',
+        padding: 40,
+        borderTopLeftRadius: 15,
+        borderTopRightRadius: 15,
+    },
+    addToDoModalCover: {
+        alignItems: 'center',
+        alignSelf: 'center',
+        justifyContent: 'flex-end',
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'rgba(255, 255, 255,0)',
+
     },
     header: {
         fontSize: 25,
@@ -89,9 +132,6 @@ export default StyleSheet.create({
     },
     inLineTextButton: {
         color: '#0af',
-    },
-    accountButton: {
-        alignSelf: 'right',
     },
     pressedInLineTextButton: {
         color: '#00f',

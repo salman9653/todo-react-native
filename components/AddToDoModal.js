@@ -5,20 +5,22 @@ import AppStyles from '../styles/AppStyles';
 export default function AddToDoModal(props) {
   let [todo, setTodo] = useState("");
   return (
-    <View style={AppStyles.container}>
-      <Text style={AppStyles.header}>Add ToDo</Text>
-      <TextInput
-        style={[AppStyles.textInput, AppStyles.darkTextInput]}
-        placeholder='ToDo'
-        value={todo}
-        onChangeText={setTodo} />
-      <View style={[AppStyles.rowContainer, AppStyles.rightAligned, AppStyles.rightMargin]}>
-        <Button title="Cancel" onPress={props.onClose} />
-        <Button title="OK" onPress={() => {
-          props.addToDo(todo);
-          setTodo("");
-          props.onClose();
-        }} />
+    <View style={AppStyles.addToDoModalCover}>
+      <View style={AppStyles.addToDoModal}>
+        <Text style={AppStyles.header}>Add ToDo Item</Text>
+        <TextInput
+          style={AppStyles.textInput}
+          placeholder='ToDo Item'
+          value={todo}
+          onChangeText={setTodo} />
+        <View style={AppStyles.rowContainerModal}>
+          <Button title="Cancel" onPress={props.onClose} />
+          <Button title="   OK   " onPress={() => {
+            props.addToDo(todo);
+            setTodo("");
+            props.onClose();
+          }} />
+        </View>
       </View>
     </View>
   );
