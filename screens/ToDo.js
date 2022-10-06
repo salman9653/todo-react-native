@@ -1,8 +1,9 @@
-import { View, Button, Text, Modal, SafeAreaView, ActivityIndicator, FlatList } from 'react-native';
+import { View, Button, ImageBackground, Text, Modal, SafeAreaView, ActivityIndicator, FlatList } from 'react-native';
 import InlineTextButton from '../components/InlineTextButton';
 import AppStyles from '../styles/AppStyles';
+import Brand from '../components/Brand';
 import { auth, db } from "../firebase";
-import { signOut } from "firebase/auth"
+import { signOut, sendEmailVerification } from "firebase/auth"
 
 // import { collection, addDoc, query, where, getDocs, deleteDoc, doc, setDoc } from "firebase/firestore";
 // import { sendEmailVerification } from 'firebase/auth';
@@ -11,16 +12,45 @@ import React from 'react';
 // import BouncyCheckbox from 'react-native-bouncy-checkbox';
 
 export default function ToDo({ navigation, route }) {
+  const background = require('../assets/background.jpg')
 
   let logout = () => {
     signOut(auth).then(() => {
       navigation.navigate("Login");
     })
   }
+
+  let showContent = () => {
+    return (
+      <View>
+        {/* {isLoading ? <ActivityIndicator size="large" /> : showToDoList()} */}
+        <Button
+          title="Add ToDo"
+        // onPress={() => setModalVisible(true)}
+        />
+      </View>
+    );
+  };
+
+  let showSendVerificationEmail = () => {
+    return (
+      <View>
+        <Text>Please verify your email to use ToDo</Text>
+        <Button title="Send Verification Email" onPress={() => sendEmailVerification(auth.currentUser)} />
+      </View>
+    );
+  };
+
+
   return (
-    <View style={AppStyles.container}>
-      <Button title='Logout' onPress={logout}></Button>
-    </View>
+    <ImageBackground source={background} style={AppStyles.container}>
+      <Brand />
+      <Button title='Account'></Button>
+      <View style={AppStyles.backgroundCover}>
+        {auth.currentUser.emailVerified ? showContent() : showSendVerificationEmail()}
+        <Button title='Logout' onPress={logout} color="#f55"></Button>
+      </View>
+    </ImageBackground>
   );
 }
 

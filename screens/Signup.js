@@ -30,7 +30,7 @@ export default function Signup({ navigation }) {
         if (password === confirmPassword) {
             createUserWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
-                    //                 sendEmailVerification(auth.currentUser);
+                    sendEmailVerification(auth.currentUser);
                     navigation.navigate("ToDo", { user: userCredential.user });
                 })
                 .catch((error) => {

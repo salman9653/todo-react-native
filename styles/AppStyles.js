@@ -53,9 +53,15 @@ export default StyleSheet.create({
         textAlign: 'center',
         color: '#555',
         fontWeight: 'bold',
-        marginVertical: 30,
+        marginVertical: 20,
     },
     rowContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 15,
+    },
+    brandAccountContainer: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
@@ -83,6 +89,9 @@ export default StyleSheet.create({
     },
     inLineTextButton: {
         color: '#0af',
+    },
+    accountButton: {
+        alignSelf: 'right',
     },
     pressedInLineTextButton: {
         color: '#00f',
