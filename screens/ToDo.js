@@ -84,7 +84,7 @@ export default function ToDo({ navigation }) {
             onPress={(isChecked) => { checkToDoItem(item, isChecked) }}
           />
         </View>
-        <InlineTextButton text="Delete" color="#f55" onPress={() => deleteToDo(item.id)} />
+        <Text style={{ color: '#f55' }} onPress={() => deleteToDo(item.id)} > Delete </Text>
       </View>
     );
   }

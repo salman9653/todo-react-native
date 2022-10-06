@@ -104,7 +104,7 @@ export default StyleSheet.create({
     },
     addToDoModal: {
         backgroundColor: 'rgba(255, 255, 255,0.9)',
-        height: '30%',
+        height: '40%',
         width: '98%',
         padding: 40,
         borderTopLeftRadius: 15,
