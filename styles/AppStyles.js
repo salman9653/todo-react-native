@@ -1,50 +1,5 @@
 import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
-    // imageContainer: {
-    //     flex: 1,
-    //     backgroundColor: '#fff',
-    //     alignItems: 'center',
-    //     justifyContent: 'center'
-    // },
-    // noPadding: {
-    //     flex: 1,
-    //     backgroundColor: '#fff',
-    //     alignItems: 'center',
-    //     justifyContent: 'center',
-    //     backgroundColor: "red"
-    // },
-    // fillSpace: {
-    //     flex: 1
-    // },
-    // rightAligned: {
-    //     justifyContent: "flex-end"
-    // },
-    // topMargin: {
-    //     marginTop: 16
-    // },
-    // bottomMargin: {
-    //     marginBottom: 16
-    // },
-    // rightMargin: {
-    //     marginRight: 16
-    // },
-    // leftMargin: {
-    //     marginLeft: 16
-    // },
-    //  lightText: {
-    //     color: "#fff"
-    // },
-    // errorText: {
-    //     color: "#ff0000"
-    // }, lightTextInput: {
-    //     borderBottomColor: "#ffffff"
-    // },
-    // darkTextInput: {
-    //     borderBottomColor: "#000000"
-    // },
-
-
-
     container: {
         flex: 1,
         justifyContent: 'center',
@@ -68,6 +23,19 @@ export default StyleSheet.create({
         justifyContent: 'space-between',
         marginHorizontal: 50,
         marginVertical: 20,
+    },
+    rowContainerTodo: {
+        backgroundColor: 'rgba(255, 255, 255, 0.6)',
+        alignSelf: 'center',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: 10,
+        width: '90%',
+        marginTop: 30,
+        marginBottom: 0,
+        borderTopRightRadius: 10,
+        borderTopLeftRadius: 10,
     },
     rowContainerListItem: {
         flexDirection: 'row',
@@ -99,8 +67,9 @@ export default StyleSheet.create({
         width: '90%',
         height: '80%',
         padding: 20,
-        backgroundColor: 'rgba(255, 255, 255, 0.7)',
-        borderRadius: 10,
+        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+        borderBottomRightRadius: 10,
+        borderBottomLeftRadius: 10,
     },
     addToDoModal: {
         backgroundColor: 'rgba(255, 255, 255,0.9)',

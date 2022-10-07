@@ -12,7 +12,7 @@ import BouncyCheckbox from 'react-native-bouncy-checkbox';
 
 
 export default function ToDo({ navigation }) {
-  const background = require('../assets/background.jpg')
+  const background = require('../assets/todobackground.jpg')
 
   let [modalVisible, setModalVisible] = useState(false);
   let [isLoading, setIsLoading] = useState(true);
@@ -136,7 +136,7 @@ export default function ToDo({ navigation }) {
   return (
     <ImageBackground source={background} style={AppStyles.container}>
 
-      <View style={AppStyles.rowContainerSpace}>
+      <View style={AppStyles.rowContainerTodo}>
         <Brand />
         <Button title='Account' onPress={() => navigation.navigate("ManageAccount")} />
       </View>

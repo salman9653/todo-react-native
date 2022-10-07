@@ -67,13 +67,14 @@ export default function ManageAccount({ navigation }) {
 
   return (
     <ImageBackground source={background} style={AppStyles.container}>
-      <View style={AppStyles.rowContainerSpace}>
+      <View style={AppStyles.rowContainerTodo}>
         <Brand />
         <Button title="  Back  " onPress={() => navigation.pop()} />
       </View>
       <View style={AppStyles.backgroundCoverToDo}>
         <Text style={AppStyles.header}>Manage Your Account</Text>
-        <Text style={{ marginBottom: 50, fontSize: 18 }} >{auth.currentUser.email}</Text>
+        <Text style={{ marginTop: 10 }}>Loged In as : </Text>
+        <Text style={{ marginBottom: 50, fontSize: 16, color: '#449d44' }} >{auth.currentUser.email}</Text>
         <TextInput
           style={AppStyles.textInput}
           placeholder='Current Password'
@@ -92,10 +93,10 @@ export default function ManageAccount({ navigation }) {
             <Button title="Update Password" onPress={updateUserPassword} />
           </View>
           <View style={AppStyles.manageAccountButtons}>
-            <Button color='#f55' title="Logout" onPress={logout} />
+            <Button color='#f55' title="Delete Your Account" onPress={deleteUserAndToDos} />
           </View>
           <View style={AppStyles.manageAccountButtons}>
-            <Button color='#f55' title="Delete Your Account" onPress={deleteUserAndToDos} />
+            <Button color='#f55' title="Logout" onPress={logout} />
           </View>
         </View>
       </View>
